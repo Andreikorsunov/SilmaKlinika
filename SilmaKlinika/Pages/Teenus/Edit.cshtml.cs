@@ -43,8 +43,8 @@ namespace SilmaKlinika.Pages.Teenus
         }
         public void OnPost()
         {
-            teenusInfo.TeenusNimi = Request.Form["TeenusNimi"];
-            teenusInfo.Hind = Request.Form["Hind"];
+            teenusInfo.TeenusNimi = Request.Form["nimi"];
+            teenusInfo.Hind = Request.Form["hind"];
             
             if (teenusInfo.TeenusID.Length == 0 || teenusInfo.TeenusNimi.Length == 0 || teenusInfo.Hind.Length == 0)
             {

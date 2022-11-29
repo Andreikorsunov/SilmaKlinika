@@ -43,10 +43,10 @@ namespace SilmaKlinika.Pages.Tootaja
         }
         public void OnPost()
         {
-            tootajadInfo.tID = Request.Form["tID"];
-            tootajadInfo.TooNimi = Request.Form["TooNimi"];
-            tootajadInfo.Spetsialiseerumine = Request.Form["Spetsialiseerumine"];
-            tootajadInfo.Keeled = Request.Form["Keeled"];
+            tootajadInfo.tID = Request.Form["id"];
+            tootajadInfo.TooNimi = Request.Form["nimi"];
+            tootajadInfo.Spetsialiseerumine = Request.Form["spetsialiseerumine"];
+            tootajadInfo.Keeled = Request.Form["keeled"];
         
             if (tootajadInfo.TooNimi.Length == 0 || tootajadInfo.Spetsialiseerumine.Length == 0
                 || tootajadInfo.Keeled.Length == 0)

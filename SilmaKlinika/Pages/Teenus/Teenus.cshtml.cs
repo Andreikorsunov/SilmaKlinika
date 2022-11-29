@@ -25,7 +25,7 @@ namespace SilmaKlinika.Pages.Teenus
                                 TeenusInfo info = new TeenusInfo();
                                 info.TeenusID = "" + reader.GetInt32(0);
                                 info.TeenusNimi = reader.GetString(1);
-                                info.Hind = "" + reader.GetFloat(2);
+                                info.Hind = "" + reader.GetInt32(2);
 
                                 listTeenus.Add(info);
                             }
