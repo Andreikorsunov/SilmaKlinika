@@ -1,0 +1,55 @@
+﻿@page
+@model SilmaKlinika.Pages.Tootaja.CreateModel
+@{
+}
+
+<br />
+<h2>Uus töötaja</h2>
+
+@if (Model.errorMessage.Length > 0){
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nimi</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nimi" value="@Model.tootajadInfo.TooNimi" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Spetsialiseerumine</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="spetsialiseerumine" value="@Model.tootajadInfo.Spetsialiseerumine" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Keeled</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="keeled" value="@Model.tootajadInfo.Keeled" />
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0) {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

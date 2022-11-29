@@ -1,0 +1,26 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    try
+    {
+        String pID = Request.Query["id"];
+
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=SilmaK;Integrated Security=True;Pooling=False";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "DELETE FROM Patsiendid WHERE pID=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", pID);
+
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+    }          
+    Response.Redirect("/Patsiendid/Patsiendid");
+}

@@ -1,0 +1,31 @@
+﻿@page
+@model SilmaKlinika.Pages.Tootaja.TootajadModel
+@{
+}
+<br />
+<a class='btn btn-primary btn-sm' href='/Tootaja/Create'>Loo uus</a>
+<table calss="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nimi</th>
+            <th>Spetsialiseerumine</th>
+            <th>Keeled</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var info in Model.listTootajad)
+{
+        <tr>
+            <td>@info.tID</td>
+            <td>@info.TooNimi</td>
+            <td>@info.Spetsialiseerumine</td>
+            <td>@info.Keeled</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Tootaja/Edit?id=@info.tID">Muuda</a>
+                <a class="btn btn-primary btn-sm" href="/Tootaja/Delete?id=@info.tID">Kustuta</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

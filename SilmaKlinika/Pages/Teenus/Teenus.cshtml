@@ -1,0 +1,29 @@
+﻿@page
+@model SilmaKlinika.Pages.Teenus.TeenusModel
+@{
+}
+<br />
+<a class='btn btn-primary btn-sm' href='/Teenus/Create'>Loo uus</a>
+<table calss="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nimetus</th>
+            <th>Hind</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var info in Model.listTeenus)
+{
+        <tr>
+            <td>@info.TeenusID</td>
+            <td>@info.TeenusNimi</td>
+            <td>@info.Hind</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Teenus/Edit?id=@info.TeenusID">Muuda</a>
+                <a class="btn btn-primary btn-sm" href="/Teenus/Delete?id=@info.TeenusID">Kustuta</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
