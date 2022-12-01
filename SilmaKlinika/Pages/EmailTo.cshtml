@@ -1,0 +1,20 @@
+﻿@page
+@model SilmaKlinika.Pages.EmailToModel
+@{
+    ViewData["Title"] = "Email";
+}
+
+<div class ="text-center">
+    <h1 class="display-4">Send Email</h1>
+    <hr/>
+    <table>
+        <tr>
+            <td>To</td>
+            <td><input type="text" asp-for="sendmail.To" placeholder="Sisesta oma email-i..." /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" class="btn-success" value="Send Mail..." /></td>
+            <td>@ViewData["Message"]</td>
+        </tr>
+    </table>
+</div>
