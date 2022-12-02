@@ -20,8 +20,7 @@ namespace SilmaKlinika.Pages.Tootaja
             tootajadInfo.Spetsialiseerumine = Request.Form["spetsialiseerumine"];
             tootajadInfo.Keeled = Request.Form["keeled"];
 
-            if (tootajadInfo.TooNimi.Length == 0 || tootajadInfo.Spetsialiseerumine.Length == 0
-                || tootajadInfo.Keeled.Length == 0)
+            if (tootajadInfo.TooNimi.Length == 0 || tootajadInfo.Spetsialiseerumine.Length == 0 || tootajadInfo.Keeled.Length == 0)
             {
                 errorMessage = "Kõik väljad on kohustuslikud";
                 return;

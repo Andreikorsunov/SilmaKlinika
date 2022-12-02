@@ -27,7 +27,6 @@ namespace SilmaKlinika.Pages.Patsiendid
                                 info.eNimi = reader.GetString(1);
                                 info.pNimi = reader.GetString(2);
                                 info.telefon = "" + reader.GetInt32(3);
-                                info.Email = reader.GetString(4);
 
                                 listPatsiendid.Add(info);
                             }
@@ -47,6 +46,5 @@ namespace SilmaKlinika.Pages.Patsiendid
         public String eNimi;
         public String pNimi;
         public String telefon;
-        public String Email;
     }
 }

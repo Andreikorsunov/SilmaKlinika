@@ -16,12 +16,11 @@ namespace SilmaKlinika.Pages.Patsiendid
 
         public void OnPost()
         {
-            patsiendidInfo.eNimi = Request.Form["eNimi"];
-            patsiendidInfo.pNimi = Request.Form["pNimi"];
+            patsiendidInfo.eNimi = Request.Form["enimi"];
+            patsiendidInfo.pNimi = Request.Form["pnimi"];
             patsiendidInfo.telefon = Request.Form["telefon"];
-            patsiendidInfo.telefon = Request.Form["Email"];
 
-            if (patsiendidInfo.eNimi.Length == 0 || patsiendidInfo.pNimi.Length == 0 || patsiendidInfo.telefon.Length == 0 || patsiendidInfo.Email.Length == 0)
+            if (patsiendidInfo.eNimi.Length == 0 || patsiendidInfo.pNimi.Length == 0 || patsiendidInfo.telefon.Length == 0)
             {
                 errorMessage = "Kõik väljad on kohustuslikud";
                 return;
@@ -34,14 +33,13 @@ namespace SilmaKlinika.Pages.Patsiendid
                 {
                     connection.Open();
                     String sql = "INSERT INTO Patsiendid " +
-                        "(eNimi, pNimi, telefon, Email) VALUES " +
-                        "(@enimi, @pnimi, @telefon, @email);";
+                        "(eNimi, pNimi, telefon) VALUES " +
+                        "(@enimi, @pnimi, @telefon);";
                     using(SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@enimi", patsiendidInfo.eNimi);
                         command.Parameters.AddWithValue("@pnimi", patsiendidInfo.pNimi);
                         command.Parameters.AddWithValue("@telefon", patsiendidInfo.telefon);
-                        command.Parameters.AddWithValue("@email", patsiendidInfo.Email);
 
                         command.ExecuteNonQuery();
                     }

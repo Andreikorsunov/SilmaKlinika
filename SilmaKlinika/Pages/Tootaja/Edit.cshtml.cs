@@ -43,7 +43,6 @@ namespace SilmaKlinika.Pages.Tootaja
         }
         public void OnPost()
         {
-            tootajadInfo.tID = Request.Form["id"];
             tootajadInfo.TooNimi = Request.Form["nimi"];
             tootajadInfo.Spetsialiseerumine = Request.Form["spetsialiseerumine"];
             tootajadInfo.Keeled = Request.Form["keeled"];

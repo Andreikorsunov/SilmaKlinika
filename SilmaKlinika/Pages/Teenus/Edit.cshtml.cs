@@ -30,7 +30,7 @@ namespace SilmaKlinika.Pages.Teenus
                             {
                                 teenusInfo.TeenusID = "" + reader.GetInt32(0);
                                 teenusInfo.TeenusNimi = reader.GetString(1);
-                                teenusInfo.Hind = "" + reader.GetFloat(2);
+                                teenusInfo.Hind = "" + reader.GetInt32(2);
                             }
                         }
                     }
@@ -46,7 +46,7 @@ namespace SilmaKlinika.Pages.Teenus
             teenusInfo.TeenusNimi = Request.Form["nimi"];
             teenusInfo.Hind = Request.Form["hind"];
             
-            if (teenusInfo.TeenusID.Length == 0 || teenusInfo.TeenusNimi.Length == 0 || teenusInfo.Hind.Length == 0)
+            if (teenusInfo.TeenusNimi.Length == 0 || teenusInfo.Hind.Length == 0)
             {
                 errorMessage = "Kõik väljad on kohustuslikud";
                 return;

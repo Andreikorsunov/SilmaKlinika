@@ -44,10 +44,9 @@ namespace SilmaKlinika.Pages.Patsiendid
         public void OnPost()
         {
             patsiendidInfo.pID = Request.Form["pID"];
-            patsiendidInfo.eNimi = Request.Form["eNimi"];
-            patsiendidInfo.pNimi = Request.Form["pNimi"];
+            patsiendidInfo.eNimi = Request.Form["enimi"];
+            patsiendidInfo.pNimi = Request.Form["pnimi"];
             patsiendidInfo.telefon = Request.Form["telefon"];
-            patsiendidInfo.telefon = Request.Form["Email"];
 
             if (patsiendidInfo.eNimi.Length == 0 || patsiendidInfo.pNimi.Length == 0 || patsiendidInfo.telefon.Length == 0)
             {
@@ -61,7 +60,7 @@ namespace SilmaKlinika.Pages.Patsiendid
                 {
                     connection.Open();
                     String sql = "UPDATE Patsiendid " +
-                        "SET eNimi=@enimi, pNimi=@pnimi, telefon=@telefon, Email=@email " +
+                        "SET eNimi=@enimi, pNimi=@pnimi, telefon=@telefon" +
                         "WHERE pID=@id";
                     using(SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -69,7 +68,6 @@ namespace SilmaKlinika.Pages.Patsiendid
                         command.Parameters.AddWithValue("@enimi", patsiendidInfo.eNimi);
                         command.Parameters.AddWithValue("@pnimi", patsiendidInfo.pNimi);
                         command.Parameters.AddWithValue("@telefon", patsiendidInfo.telefon);
-                        command.Parameters.AddWithValue("@email", patsiendidInfo.Email);
 
                         command.ExecuteNonQuery();
                     }
